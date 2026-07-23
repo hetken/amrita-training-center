@@ -14,7 +14,6 @@ class TestForm:
         page.open()
         return page
 
-    @pytest.mark.skip
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.title('Guest can submit form with correct data')
     def test_guest_can_submit_form_with_correct_data(self, page, fake):
