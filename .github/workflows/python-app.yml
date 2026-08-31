@@ -1,0 +1,20 @@
+name: UI autotests
+
+on:
+  push:
+    branches: [ "main" ]
+    
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+
+      - name: Run test project
+        run: pytest -v tests\test_courses_page.py
