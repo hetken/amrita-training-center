@@ -1,9 +1,6 @@
 name: UI autotests
 
-on:
-  push:
-    branches: [ "main" ]
-    
+on:    
   workflow_dispatch: 
 
 jobs:
@@ -24,7 +21,7 @@ jobs:
         run: pytest -sv --alluredir=allure-reports tests/test_courses_page.py
 
       - name: Upload Allure report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: ${{ !cancelled() }}
         with:
           name: report
