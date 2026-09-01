@@ -25,7 +25,7 @@ jobs:
 
       - name: Upload Allure report
         uses: actions/upload-artifact@gv4
-        if: !cancelled()
+        if: ${{ !cancelled() }}
         with:
           name: report
           path: allure-reports/
