@@ -24,7 +24,7 @@ jobs:
         run: pytest -sv --alluredir=allure-reports tests/test_courses_page.py
 
       - name: Upload Allure report
-        uses: actions/upload-artifact@gv4
+        uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: report
